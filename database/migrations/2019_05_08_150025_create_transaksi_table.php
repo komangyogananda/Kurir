@@ -16,6 +16,8 @@ class CreateTransaksiTable extends Migration
         Schema::create('transaksi', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('cabang_id')->unsigned();
+            $table->integer('pengirim_id')->unsigned();
+            $table->integer('penerima_id')->unsigned();
             $table->integer('kurir_id')->unsigned();
             $table->integer('pegawai_id')->unsigned();
             $table->integer('tipe_jasa_id')->unsigned();
