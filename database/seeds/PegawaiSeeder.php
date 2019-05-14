@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
 
 class PegawaiSeeder extends Seeder
 {
@@ -12,5 +13,6 @@ class PegawaiSeeder extends Seeder
     public function run()
     {
         //
+
     }
 }
