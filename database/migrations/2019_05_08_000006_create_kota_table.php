@@ -17,7 +17,6 @@ class CreateKotaTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('provinsi_id')->unsigned();
             $table->string('nama_kota', 125);
-            $table->timestamps();
 
             $table->foreign('provinsi_id')->references('id')->on('provinsi');
         });

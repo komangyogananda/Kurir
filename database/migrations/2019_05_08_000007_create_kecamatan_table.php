@@ -17,7 +17,6 @@ class CreateKecamatanTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('kota_id')->unsigned();
             $table->string('nama_kecamatan', 125);
-            $table->timestamps();
 
             $table->foreign('kota_id')->references('id')->on('kota');
         });

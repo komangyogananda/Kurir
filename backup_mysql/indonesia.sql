@@ -1,79 +1,3 @@
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `provinsi`
---
-
-DROP TABLE IF EXISTS `provinsi`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE IF NOT EXISTS `provinsi` (
-  `id` char(2) COLLATE utf8_unicode_ci NOT NULL,
-  `nama_provinsi` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `kota`
---
-
-DROP TABLE IF EXISTS `kota`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE IF NOT EXISTS `kota` (
-  `id` char(4) COLLATE utf8_unicode_ci NOT NULL,
-  `province_id` char(2) COLLATE utf8_unicode_ci NOT NULL,
-  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `kota_province_id_index` (`province_id`),
-  CONSTRAINT `kota_province_id_foreign` FOREIGN KEY (`province_id`) REFERENCES `provinsi` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `kecamatan`
---
-
-DROP TABLE IF EXISTS `kecamatan`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE IF NOT EXISTS `kecamatan` (
-  `id` char(7) COLLATE utf8_unicode_ci NOT NULL,
-  `regency_id` char(4) COLLATE utf8_unicode_ci NOT NULL,
-  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `kecamatan_id_index` (`regency_id`),
-  CONSTRAINT `kecamatan_regency_id_foreign` FOREIGN KEY (`regency_id`) REFERENCES `kota` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `kelurahan`
---
-
-DROP TABLE IF EXISTS `kelurahan`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE IF NOT EXISTS `kelurahan` (
-  `id` char(10) COLLATE utf8_unicode_ci NOT NULL,
-  `district_id` char(7) COLLATE utf8_unicode_ci NOT NULL,
-  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `kelurahan_district_id_index` (`district_id`),
-  CONSTRAINT `kelurahan_district_id_foreign` FOREIGN KEY (`district_id`) REFERENCES `kecamatan` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 --
 -- Dumping data for table `provinsi`
 --
@@ -84488,7 +84412,7 @@ INSERT INTO `kelurahan` VALUES
   ('9107182003', '9107182', 'WOLUIN'),
   ('9107182004', '9107182', 'KLALIN MOS'),
   ('9107182005', '9107182', 'KAMLIN'),
-  ('9107182005', '9107182', 'KWARI'),
+  ('9107182006', '9107182', 'KWARI'),
   ('9107183001', '9107183', 'SAILALA'),
   ('9107183002', '9107183', 'KLAWANA'),
   ('9107183003', '9107183', 'KLADUK'),
@@ -84715,7 +84639,6 @@ INSERT INTO `kelurahan` VALUES
   ('9109070012', '9109070', 'APOKI'),
   ('9109070013', '9109070', 'JAFAI'),
   ('9109070015', '9109070', 'ANARUM'),
-  ('9109070015', '9109070', 'JAMBUANI'),
   ('9109070016', '9109070', 'MANARIA'),
   ('9109070017', '9109070', 'NARAI'),
   ('9109070022', '9109070', 'WASANGGON'),
@@ -84729,12 +84652,6 @@ INSERT INTO `kelurahan` VALUES
   ('9109071006', '9109071', 'IREJI'),
   ('9109071007', '9109071', 'MEY COCFORGA');
 INSERT INTO `kelurahan` VALUES
-  ('9109071008', '9109071', 'UNTOREY'),
-  ('9109071009', '9109071', 'KARAWI'),
-  ('9109071010', '9109071', 'SITORI'),
-  ('9109071011', '9109071', 'NABISAI'),
-  ('9109071012', '9109071', 'ARAMPAK'),
-  ('9109071013', '9109071', 'WASABITI'),
   ('9109072001', '9109072', 'NEKORI'),
   ('9109072002', '9109072', 'AJAMI'),
   ('9109072003', '9109072', 'ARWANI'),
@@ -90171,11 +90088,3 @@ INSERT INTO `kelurahan` VALUES
   ('9471040008', '9471040', 'KAMPUNG KAYOBATU');
 /*!40000 ALTER TABLE `kelurahan` ENABLE KEYS */;
 UNLOCK TABLES;
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
