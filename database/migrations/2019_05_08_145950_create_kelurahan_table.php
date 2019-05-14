@@ -14,10 +14,12 @@ class CreateKelurahanTable extends Migration
     public function up()
     {
         Schema::create('kelurahan', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('kecamatan_id')->unsigned();
-            $table->string('nama_kelurahan');
+            $table->char('id', 10);
+            $table->char('kecamatan_id', 7);
+            $table->string('nama_kelurahan', 255);
             $table->timestamps();
+
+            $table->foreign('kecamatan_id')->references('id')->on('kecamatan');
         });
     }
 
