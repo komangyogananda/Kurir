@@ -15,14 +15,17 @@ class CreateDetailBarangTable extends Migration
     {
         Schema::create('detail_barang', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('kategori_barang_id')->unsigned();
-            $table->integer('transaksi_id')->unsigned();
+            $table->bigInteger('kategori_barang_id')->unsigned();
+            $table->bigInteger('transaksi_id')->unsigned();
             $table->string('deskripsi_barang', 125);
             $table->integer('berat');
             $table->integer('tinggi');
             $table->integer('lebar');
             $table->integer('panjang');
             $table->timestamps();
+
+            $table->foreign('kategori_barang_id')->references('id')->on('kategori_barang');
+            $table->foreign('transaksi_id')->references('id')->on('transaksi');
         });
     }
 

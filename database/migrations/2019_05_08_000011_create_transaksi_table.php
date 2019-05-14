@@ -15,14 +15,17 @@ class CreateTransaksiTable extends Migration
     {
         Schema::create('transaksi', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('cabang_id')->unsigned();
-            $table->integer('pengirim_id')->unsigned();
-            $table->integer('penerima_id')->unsigned();
-            $table->integer('kurir_id')->unsigned();
-            $table->integer('pegawai_id')->unsigned();
-            $table->integer('tipe_jasa_id')->unsigned();
+            $table->bigInteger('cabang_id')->unsigned();
+            $table->bigInteger('kurir_id')->unsigned();
+            $table->bigInteger('pegawai_id')->unsigned();
+            $table->bigInteger('tipe_jasa_id')->unsigned();
             $table->integer('harga');
             $table->timestamps();
+
+            $table->foreign('cabang_id')->references('id')->on('cabang');
+            $table->foreign('kurir_id')->references('id')->on('kurir');
+            $table->foreign('pegawai_id')->references('id')->on('pegawai');
+            $table->foreign('tipe_jasa_id')->references('id')->on('tipe_jasa');
         });
     }
 

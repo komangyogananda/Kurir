@@ -15,10 +15,14 @@ class CreateTrackingTable extends Migration
     {
         Schema::create('tracking', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('cabang_id')->unsigned();
-            $table->integer('transaksi_id')->unsigned();
-            $table->integer('kurir_id')->unsigned();
+            $table->bigInteger('cabang_id')->unsigned();
+            $table->bigInteger('transaksi_id')->unsigned();
+            $table->bigInteger('kurir_id')->unsigned();
             $table->timestamps();
+
+            $table->foreign('cabang_id')->references('id')->on('cabang');
+            $table->foreign('transaksi_id')->references('id')->on('transaksi');
+            $table->foreign('kurir_id')->references('id')->on('kurir');
         });
     }
 

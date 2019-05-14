@@ -15,10 +15,12 @@ class CreateCabangTable extends Migration
     {
         Schema::create('cabang', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('kelurahan_id')->unsigned();
+            $table->bigInteger('kelurahan_id')->unsigned();
             $table->string('nama_cabang', 125);
             $table->string('alamat_cabang');
             $table->timestamps();
+
+            $table->foreign('kelurahan_id')->references('id')->on('kelurahan');
         });
     }
 
