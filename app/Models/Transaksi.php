@@ -7,10 +7,27 @@ use Illuminate\Database\Eloquent\Model;
 class Transaksi extends Model
 {
     protected $table = 'transaksi';
-    protected $fillable = ['cabang_id', 'kurir_id', 'pegawai_id', 'tipe_jasa_id', 'harga'];
+    protected $fillable = [
+        'cabang_id', 
+        'pengirim_id', 
+        'penerima_id', 
+        'kurir_id', 
+        'pegawai_id', 
+        'tipe_jasa_id', 
+        'harga'
+    ];
 
     public function cabang(){
         return $this->belongsTo('App\Models\Cabang');
+    }
+    public function tracking(){
+        return $this->hasMany('App\Models\Tracking');
+    }
+    public function pegawai(){
+        return $this->belongsTo('App\Models\Pegawai');
+    }
+    public function tipe_jasa(){
+        return $this->belongsTo('App\Models\TipeJasa');
     }
     public function kurir(){
         return $this->belongsTo('App\Models\Kurir');
@@ -21,10 +38,7 @@ class Transaksi extends Model
     public function penerima(){
         return $this->hasOne('App\Models\Penerima');
     }
-    public function tipe_jasa(){
-        return $this->belongsTo('App\Models\TipeJasa');
-    }
-    public function tracking(){
-        return $this->hasMany('App\Models\Tracking');
+    public function detail_barang(){
+        return $this->hasOne('App\Models\DetailBarang');
     }
 }

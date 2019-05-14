@@ -18,7 +18,6 @@ class Pengirim extends Model
     public function kelurahan(){
         return $this->belongsTo('App\Models\Kelurahan');
     }
-
     public function transaksi(){
         return $this->belongsTo('App\Models\Transaksi');
     }

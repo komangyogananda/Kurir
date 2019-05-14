@@ -12,4 +12,13 @@ class Kelurahan extends Model
     public function kecamatan(){
         return $this->belongsTo('App\Models\Kecamatan');
     }
+    public function cabang(){
+        return $this->hasMany('App\Models\Cabang');
+    }
+    public function pengirim(){
+        return $this->hasMany('App\Models\Pengirim');
+    }
+    public function penerima(){
+        return $this->hasMany('App\Models\Penerima');
+    }
 }

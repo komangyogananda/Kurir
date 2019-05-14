@@ -40,11 +40,9 @@ class Pegawai extends Authenticatable
     public function transaksi(){
         return $this->hasMany('App\Models\Transaksi');
     }
-
     public function jenis_pegawai(){
         return $this->belongsTo('App\Models\JenisPegawai');
     }
-
     public function cabang(){
         return $this->belongsTo('App\Models\Cabang');
     }

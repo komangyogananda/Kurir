@@ -10,6 +10,6 @@ class JenisPegawai extends Model
     protected $fillable = ['posisi'];
 
     public function pegawai(){
-        return $this->hasMany('App\Models\JenisPegawai');
+        return $this->hasMany('App\Models\Pegawai');
     }
 }
