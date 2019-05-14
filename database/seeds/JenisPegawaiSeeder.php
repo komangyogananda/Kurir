@@ -14,37 +14,52 @@ class JenisPegawaiSeeder extends Seeder
         DB::table('jenis_pegawai')->delete();
         DB::table('jenis_pegawai')->insert([
             [
-                'posisi' => 'Elektronik',
+                'posisi' => 'Manager',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'posisi' => 'Dokumen dan Surat',
+                'posisi' => 'Teller',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'posisi' => 'Makanan dan Minuman',
+                'posisi' => 'Customer Service',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'posisi' => 'Logam Mulia',
+                'posisi' => 'Security',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'posisi' => 'Pecah Belah',
+                'posisi' => 'Operator Pemilah Barang',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'posisi' => 'Barang Rumah Tangga',
+                'posisi' => 'Operator Packing Barang',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'posisi' => 'Barang Besar',
+                'posisi' => 'Operator Operasional Barang',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'posisi' => 'Staff IT',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'posisi' => 'Cleaning Service',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'posisi' => 'Marketing',
                 'created_at' => now(),
                 'updated_at' => now()
             ],

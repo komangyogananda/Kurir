@@ -16,6 +16,7 @@ class CreateTipeJasaTable extends Migration
         Schema::create('tipe_jasa', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nama_jasa', 125);
+            $table->string('deskripsi_jasa', 200);
             $table->integer('harga_jasa');
             $table->timestamps();
         });
