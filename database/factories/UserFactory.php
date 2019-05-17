@@ -1,19 +1,9 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\Models\Cabang;
 use App\Models\DetailBarang;
-use App\Models\JenisPegawai;
-use App\Models\KategoriBarang;
-use App\Models\Kecamatan;
-use App\Models\Kelurahan;
-use App\Models\Kota;
-use App\Models\Kurir;
-use App\Models\Pegawai;
 use App\Models\Penerima;
 use App\Models\Pengirim;
-use App\Models\Provinsi;
-use App\Models\TipeJasa;
 use App\Models\Tracking;
 use App\Models\Transaksi;
 use Illuminate\Support\Str;
