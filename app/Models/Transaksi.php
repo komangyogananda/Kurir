@@ -9,12 +9,14 @@ class Transaksi extends Model
     protected $table = 'transaksi';
     protected $fillable = [
         'cabang_id', 
-        'pengirim_id', 
-        'penerima_id', 
         'kurir_id', 
         'pegawai_id', 
         'tipe_jasa_id', 
-        'harga'
+        'penerima_id',
+        'pengirim_id',
+        'detail_barang_id',
+        'status',
+        'harga',
     ];
 
     public function cabang(){

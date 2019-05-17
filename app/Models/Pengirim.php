@@ -9,7 +9,6 @@ class Pengirim extends Model
     protected $table = 'pengirim';
     protected $fillable = [
         'kelurahan_id',
-        'transaksi_id',
         'nama_pengirim',
         'alamat_pengirim',
         'no_hp_pengirim',
@@ -19,6 +18,6 @@ class Pengirim extends Model
         return $this->belongsTo('App\Models\Kelurahan');
     }
     public function transaksi(){
-        return $this->belongsTo('App\Models\Transaksi');
+        return $this->hasOne('App\Models\Transaksi');
     }
 }

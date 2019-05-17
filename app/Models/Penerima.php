@@ -9,7 +9,6 @@ class Penerima extends Model
     protected $table = 'penerima';
     protected $fillable = [
         'kelurahan_id',
-        'transaksi_id',
         'nama_penerima',
         'alamat_penerima',
         'no_hp_penerima',
@@ -19,6 +18,6 @@ class Penerima extends Model
         return $this->belongsTo('App\Models\Kelurahan');
     }
     public function transaksi(){
-        return $this->belongsTo('App\Models\Transaksi');
+        return $this->hasOne('App\Models\Transaksi');
     }
 }

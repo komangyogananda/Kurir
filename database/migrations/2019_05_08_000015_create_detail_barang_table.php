@@ -16,7 +16,6 @@ class CreateDetailBarangTable extends Migration
         Schema::create('detail_barang', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('kategori_barang_id')->unsigned();
-            $table->bigInteger('transaksi_id')->unsigned();
             $table->string('deskripsi_barang', 125);
             $table->integer('berat');
             $table->integer('tinggi');
@@ -25,7 +24,6 @@ class CreateDetailBarangTable extends Migration
             $table->timestamps();
 
             $table->foreign('kategori_barang_id')->references('id')->on('kategori_barang');
-            $table->foreign('transaksi_id')->references('id')->on('transaksi');
         });
     }
 

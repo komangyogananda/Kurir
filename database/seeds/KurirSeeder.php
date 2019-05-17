@@ -20,10 +20,12 @@ class KurirSeeder extends Seeder
 
         $faker = Faker::create('id_ID');
         for ($i = 0; $i < 30000; $i++){
+            $namaDepan = $faker->firstName;
+            $namaBelakang = $faker->lastName;
             DB::table('kurir')->insert([
-                'nama_kurir' => $faker->name,
-                'no_hp_kurir' => "081".mt_rand(000000000, 999999999),
-                'username' => $faker->userName,
+                'nama_kurir' => $namaDepan.' '.$namaBelakang,
+                'no_hp_kurir' => $faker->phoneNumber,
+                'username' => $namaDepan.mt_rand(1, 99),
                 'password' => bcrypt(Str::random(10)),
                 'remember_token' => Str::random(10),
                 'created_at' => now(),

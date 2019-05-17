@@ -9,7 +9,6 @@ class DetailBarang extends Model
     protected $table = 'detail_barang';
     protected $fillable = [
         'kategori_barang_id', 
-        'transaksi_id', 
         'deskripsi_barang', 
         'berat', 
         'tinggi', 
@@ -21,6 +20,6 @@ class DetailBarang extends Model
         return $this->belongsTo('App\Models\KategoriBarang');
     }
     public function transaksi(){
-        return $this->belongsTo('App\Models\Transaksi');
+        return $this->hasOne('App\Models\Transaksi');
     }
 }
