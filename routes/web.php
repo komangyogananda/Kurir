@@ -52,3 +52,7 @@ Route::get('/tracking', function(){
 Route::get('/tracking/{id}', function(){
     return view('/form/hasilTracking');
 });
+
+Route::get('/kota/get/{provinsi}', 'dependency@getKota');
+Route::get('/kecamatan/get/{kota}', 'dependency@getKecamatan');
+Route::get('/kelurahan/get/{kecamatan}', 'dependency@getKelurahan');
