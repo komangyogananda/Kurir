@@ -9,12 +9,11 @@ class create extends Controller
 {
     public function formTransaksi()
     {
-        $provinsi['provinsi'] = DB::table('provinsi')->get();
-        $kota['kota'] = DB::table('kota')->get();
-        $kecamatan['kecamatan'] = DB::table('kecamatan')->get();
-        $kelurahan['kelurahan'] = DB::table('kelurahan')->get();
-
-        return view('form.transaksi', $provinsi, $kota, $kecamatan, $kelurahan);
+        $data['provinsi'] = DB::table('provinsi')->get();
+        $data['tipe_jasa'] = DB::table('tipe_jasa')->get();
+        $data['kategori_barang'] = DB::table('kategori_barang')->get();
+        $a = 'a';
+        return view('form.transaksi', $data);
     }
 
     public function createTransaksi(Request $request)

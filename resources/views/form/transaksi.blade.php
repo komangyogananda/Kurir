@@ -35,6 +35,11 @@
                                 </select>
                             </div>
                             <div class="form-line m-2">
+                                <select id="kecamatan" class="form-control" name="kecamatan_pengirim">
+                                    <option>Kecamatan</option>
+                                </select>
+                            </div>
+                            <div class="form-line m-2">
                                 <select id="kelurahan" class="form-control" name="kelurahan_pengirim">
                                     <option>Kelurahan</option>
                                 </select>
@@ -65,6 +70,11 @@
                                 </select>
                             </div>
                             <div class="form-line m-2">
+                                <select id="kecamatan" class="form-control" name="kecamatan_penerima">
+                                    <option>Kecamatan</option>
+                                </select>
+                            </div>
+                            <div class="form-line m-2">
                                 <select id="kelurahan" class="form-control" name="kelurahan_penerima">
                                     <option>Kelurahan</option>
                                 </select>
@@ -78,21 +88,17 @@
                             <div class="form-line m-2">
                                 <select id="tipeJasa" class="form-control" name="tipe_jasa">
                                     <option>Tipe Jasa</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
+                                    @foreach ($tipe_jasa as $tj)
+                                        <option value="{{$tj->id}}">{{$tj->nama_jasa}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="form-line m-2">
                                 <select id="kategori_barang" class="form-control" name="kategori_barang">
                                     <option>Kategori Barang</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
+                                    @foreach ($kategori_barang as $kb)
+                                        <option value="{{$kb->id}}">{{$kb->nama_kategori}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="form-line m-2">
