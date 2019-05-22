@@ -94,5 +94,8 @@
 <script src="{{ asset('js/getKota.js') }}"></script>
 <script src="{{ asset('js/getKecamatan.js') }}"></script>
 <script src="{{ asset('js/getKelurahan.js') }}"></script>
+<script src="{{ asset('js/getKota1.js') }}"></script>
+<script src="{{ asset('js/getKecamatan1.js') }}"></script>
+<script src="{{ asset('js/getKelurahan1.js') }}"></script>
 </body>
 </html>

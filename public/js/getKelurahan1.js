@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    $('select[name="kecamatan_pengirim"]').on('change', function(){
+    $('select[name="kecamatan_penerima"]').on('change', function(){
         var kecamatanId = $(this).val();
         if(kecamatanId) {
             $.ajax({
@@ -13,11 +13,11 @@ $(document).ready(function() {
 
                 success:function(data) {
 
-                    $('select[name="kelurahan_pengirim"]').empty();
+                    $('select[name="kelurahan_penerima"]').empty();
 
                     $.each(data, function(key, value){
 
-                        $('select[name="kelurahan_pengirim"]').append('<option value="'+ value +'">' + key + '</option>');
+                        $('select[name="kelurahan_penerima"]').append('<option value="'+ value +'">' + key + '</option>');
 
                     });
                 },
@@ -26,7 +26,7 @@ $(document).ready(function() {
                 }
             });
         } else {
-            $('select[name="kelurahan_pengirim"]').empty();
+            $('select[name="kelurahan_penerima"]').empty();
         }
 
     });

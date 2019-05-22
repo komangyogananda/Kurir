@@ -1,10 +1,10 @@
 $(document).ready(function() {
 
-    $('select[name="kecamatan_pengirim"]').on('change', function(){
-        var kecamatanId = $(this).val();
-        if(kecamatanId) {
+    $('select[name="provinsi_penerima"]').on('change', function(){
+        var provinsiId = $(this).val();
+        if(provinsiId) {
             $.ajax({
-                url: '/kelurahan/get/'+kecamatanId,
+                url: '/kota/get/'+provinsiId,
                 type:"GET",
                 dataType:"json",
                 beforeSend: function(){
@@ -13,11 +13,11 @@ $(document).ready(function() {
 
                 success:function(data) {
 
-                    $('select[name="kelurahan_pengirim"]').empty();
+                    $('select[name="kota_penerima"]').empty();
 
                     $.each(data, function(key, value){
 
-                        $('select[name="kelurahan_pengirim"]').append('<option value="'+ value +'">' + key + '</option>');
+                        $('select[name="kota_penerima"]').append('<option value="'+ value +'">' + key + '</option>');
 
                     });
                 },
@@ -26,7 +26,7 @@ $(document).ready(function() {
                 }
             });
         } else {
-            $('select[name="kelurahan_pengirim"]').empty();
+            $('select[name="kota_penerima"]').empty();
         }
 
     });

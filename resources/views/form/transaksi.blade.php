@@ -24,31 +24,19 @@
                             <div class="form-line m-2">
                                 <select id="provinsi" class="form-control" name="provinsi_pengirim">
                                     <option>Provinsi</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
+                                    @foreach ($provinsi as $pro)
+                                        <option value="{{$pro->id}}">{{$pro->nama_provinsi}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="form-line m-2">
                                 <select id="kota" class="form-control" name="kota_pengirim">
                                     <option>Kabupaten/Kota</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
                                 </select>
                             </div>
                             <div class="form-line m-2">
-                                <select id="kelurahan" class="form-control" name="kelurahan-pengirim">
+                                <select id="kelurahan" class="form-control" name="kelurahan_pengirim">
                                     <option>Kelurahan</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
                                 </select>
                             </div>
                         </div>
@@ -64,33 +52,21 @@
                                 <input type="text" class="form-control" placeholder="Alamat Penerima" name="alamat_penerima">
                             </div>
                             <div class="form-line m-2">
-                                <select id="provinsi" class="form-control" name="provinsi_penerim">
+                                <select id="provinsi" class="form-control" name="provinsi_penerima">
                                     <option>Provinsi</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
+                                    @foreach ($provinsi as $pro)
+                                        <option value="{{$pro->id}}">{{$pro->nama_provinsi}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="form-line m-2">
                                 <select id="kota" class="form-control" name="kota_penerima">
                                     <option>Kabupaten/Kota</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
                                 </select>
                             </div>
                             <div class="form-line m-2">
                                 <select id="kelurahan" class="form-control" name="kelurahan_penerima">
                                     <option>Kelurahan</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
                                 </select>
                             </div>
                         </div>
