@@ -49,9 +49,7 @@ Route::get('/tracking', function(){
     return view('/form/tracking');
 });
 
-Route::get('/tracking/{id}', function(){
-    return view('/form/hasilTracking');
-});
+Route::get('/tracking/{id}', 'tracking@getTracking')->name('form_hasil_tracking');
 
 Route::get('/kota/get/{provinsi}', 'dependency@getKota');
 Route::get('/kecamatan/get/{kota}', 'dependency@getKecamatan');
