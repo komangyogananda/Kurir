@@ -8,7 +8,7 @@
             <h3>Transaksi Baru</h3>
             <div class="row clearfix">
                 <div class="col-11 m-3">
-                    <form action="" method="POST" enctype="multipart/form-data"></form>
+                    <form method="POST" enctype="multipart/form-data" action="{{ action('create@storeTransaksi') }}"></form>
                         {{ csrf_field() }}
                         <div class="form-group m-4">
                             <h4>Pengirim</h4>
@@ -82,6 +82,12 @@
                         </div>
                         <div class="form-group m-4">
                             <h4>Detail Order</h4>
+                            <div class="form-line m-2">
+                                <input type="text" class="form-control" placeholder="Id Cabang" name="id_cabang">
+                            </div>
+                            <div class="form-line m-2">
+                                <input type="text" class="form-control" placeholder="Id Kurir" name="id_kurir">
+                            </div>
                             <div class="form-line m-2">
                                 <input type="text" class="form-control" placeholder="Id Pegawai" name="id_pegawai">
                             </div>
