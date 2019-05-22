@@ -35,3 +35,8 @@ Route::get('/table/provinsi', 'show_table@provinsi')->name('table_provinsi');
 Route::get('/table/tipe_jasa', 'show_table@tipe_jasa')->name('table_tipe_jasa');
 Route::get('/table/tracking', 'show_table@tracking')->name('table_tracking');
 Route::get('/table/transaksi', 'show_table@transaksi')->name('table_transaksi');
+
+Route::get('/table/kurir/hapus/{id}', 'delete@kurir');
+Route::get('/table/pegawai/hapus/{id}', 'delete@pegawai');
+Route::get('/table/transaksi/hapus/{id}', 'delete@transaksi');
+Route::get('/table/tracking/hapus/{id}', 'delete@tracking');

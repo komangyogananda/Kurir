@@ -27,7 +27,7 @@
                 <td>{{ $value->kurir_id }}</td>
                 <td>
                     <a href=""><i class="fas fa-edit"></i></a>
-                    <a href=""><i class="fas fa-trash-alt"></i></a>
+                    <a href="/table/tracking/hapus/{{ $value->id }}"><i class="fas fa-trash-alt"></i></a>
                 </td>
             </tr>
             @endforeach

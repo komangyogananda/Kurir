@@ -11,24 +11,24 @@ class delete extends Controller
     public function kurir($id)
     {
         DB::table('kurir')->where('id', $id)->delete();
-        return view('table.kurir');
+        return redirect('/table/kurir');
     }
 
     public function pegawai($id)
     {
         DB::table('pegawai')->where('id', $id)->delete();
-        return view('table.pegawai');
+        return redirect('/table/pegawai');
     }
     
     public function transaksi($id)
     {
         DB::table('transaksi')->where('id', $id)->delete();
-        return view('table.transaksi');
+        return redirect('/table/transaksi');
     }
 
     public function tracking($id)
     {
         DB::table('tracking')->where('id', $id)->delete();
-        return view('table.tracking');
+        return redirect('/table/tracking');
     }
 }

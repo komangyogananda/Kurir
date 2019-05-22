@@ -31,7 +31,7 @@
                 <td>{{ $value->harga }}</td>
                 <td>
                     <a href=""><i class="fas fa-edit"></i></a>
-                    <a href=""><i class="fas fa-trash-alt"></i></a>
+                    <a href="/table/transaksi/hapus/{{ $value->id }}"><i class="fas fa-trash-alt"></i></a>
                 </td>
             </tr>
             @endforeach
