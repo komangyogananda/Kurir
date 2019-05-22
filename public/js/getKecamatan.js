@@ -1,10 +1,10 @@
 $(document).ready(function() {
 
-    $('select[name="country"]').on('change', function(){
-        var countryId = $(this).val();
-        if(countryId) {
+    $('select[name="kota_pengirim"]').on('change', function(){
+        var kotaId = $(this).val();
+        if(kotaId) {
             $.ajax({
-                url: '/states/get/'+countryId,
+                url: '/kecamatan/get/'+kotaId,
                 type:"GET",
                 dataType:"json",
                 beforeSend: function(){
@@ -13,11 +13,11 @@ $(document).ready(function() {
 
                 success:function(data) {
 
-                    $('select[name="state"]').empty();
+                    $('select[name="kecamatan_pengirim"]').empty();
 
                     $.each(data, function(key, value){
 
-                        $('select[name="state"]').append('<option value="'+ key +'">' + value + '</option>');
+                        $('select[name="kecamatan_pengirim"]').append('<option value="'+ value +'">' + key + '</option>');
 
                     });
                 },
@@ -26,7 +26,7 @@ $(document).ready(function() {
                 }
             });
         } else {
-            $('select[name="state"]').empty();
+            $('select[name="kecamatan_pengirim"]').empty();
         }
 
     });

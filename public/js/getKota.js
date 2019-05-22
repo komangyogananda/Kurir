@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    $('select[name="provinsi"]').on('change', function(){
+    $('select[name="provinsi_pengirim"]').on('change', function(){
         var provinsiId = $(this).val();
         if(provinsiId) {
             $.ajax({
@@ -13,11 +13,11 @@ $(document).ready(function() {
 
                 success:function(data) {
 
-                    $('select[name="kota"]').empty();
+                    $('select[name="kota_pengirim"]').empty();
 
                     $.each(data, function(key, value){
 
-                        $('select[name="kota"]').append('<option value="'+ key +'">' + value + '</option>');
+                        $('select[name="kota_pengirim"]').append('<option value="'+ value +'">' + key + '</option>');
 
                     });
                 },
@@ -26,7 +26,7 @@ $(document).ready(function() {
                 }
             });
         } else {
-            $('select[name="kota"]').empty();
+            $('select[name="kota_pengirim"]').empty();
         }
 
     });

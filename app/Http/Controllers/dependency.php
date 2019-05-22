@@ -10,19 +10,19 @@ class dependency extends Controller
 {
     public function getKota($provinsi)
     {
-        $kota = DB::table('kota')->where('provinsi_id', $provinsi);
+        $kota = DB::table('kota')->where('provinsi_id', $provinsi)->pluck('id', 'nama_kota');
         return json_encode($kota);
     }
 
     public function getKecamatan($kota)
     {
-        $kecamatan = DB::table('kecamatan')->where('kota_id', $kota);
+        $kecamatan = DB::table('kecamatan')->where('kota_id', $kota)->pluck('id', 'nama_kecamatan');
         return json_encode($kecamatan);
     }
 
     public function getKelurahan($kecamatan)
     {
-        $kelurahan = DB::table('kelurahan')->where('kecamatan_id', $kecamatan);
+        $kelurahan = DB::table('kelurahan')->where('kecamatan_id', $kecamatan)->pluck('id', 'nama_kelurahan');
         return json_encode($kelurahan);
     }
 }
