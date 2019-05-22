@@ -4,7 +4,7 @@
             <div class="col">
                 <h4>
                     <i class="fa icon-box"></i>
-                    Dashboard
+                    Kurir
                 </h4>
             </div>
         </div>

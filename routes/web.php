@@ -40,3 +40,7 @@ Route::get('/table/kurir/hapus/{id}', 'delete@kurir');
 Route::get('/table/pegawai/hapus/{id}', 'delete@pegawai');
 Route::get('/table/transaksi/hapus/{id}', 'delete@transaksi');
 Route::get('/table/tracking/hapus/{id}', 'delete@tracking');
+
+Route::get('/transaksi/baru', function(){
+    return view('/form/transaksi');
+});
