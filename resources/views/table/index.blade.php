@@ -12,7 +12,7 @@
     <a href="{{route ('table_kota')}}">Kota</a><br>
     <a href="{{route ('table_kurir')}}">Kurir</a><br>
     <a href="{{route ('table_pegawai')}}">Pegawai</a><br>
-    <a href="{{route ('table_penerima')}}">Penrima</a><br>
+    <a href="{{route ('table_penerima')}}">Penerima</a><br>
     <a href="{{route ('table_pengirim')}}">Pengirim</a><br>
     <a href="{{route ('table_provinsi')}}">Provinsi</a><br>
     <a href="{{route ('table_tipe_jasa')}}">Tipe Jasa</a><br>
