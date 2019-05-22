@@ -47,9 +47,10 @@
             <div class="p-5">
                 <h3>Tracking</h3>
                 <p>Masukkan ID Transaksimu</p>
-                <form action="index.html">
+                <form method="post" action="/tracking" enctype="multipart/form-data">
+                    {{ csrf_field() }}
                     <div class="form-group">
-                        <input type="text" class="form-control form-control-lg" placeholder="ID Transaksi">
+                        <input name="idTransaksi" type="text" class="form-control form-control-lg" placeholder="ID Transaksi">
                     </div>
                     <input type="submit" class="btn btn-primary btn-lg btn-block" value="Track">
                 </form>

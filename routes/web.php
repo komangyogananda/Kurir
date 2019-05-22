@@ -43,11 +43,10 @@ Route::get('/table/tracking/hapus/{id}', 'delete@tracking');
 
 Route::get('/transaksi/baru', 'create@formTransaksi');
 
-Route::get('/tracking', function(){
-    return view('/form/tracking');
-});
+Route::get('/tracking', 'tracking@tracking')->name('tracking');
 
 Route::get('/tracking/{id}', 'tracking@getTracking')->name('form_hasil_tracking');
+Route::post('/tracking', 'tracking@redirectTracking')->name('redirect_tracking');
 
 Route::get('/kota/get/{provinsi}', 'dependency@getKota');
 Route::get('/kecamatan/get/{kota}', 'dependency@getKecamatan');

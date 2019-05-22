@@ -30,6 +30,10 @@
                             Penerima
                             <span class="float-right mt-2 font-weight-bold">A{{ $penerima }}</span>
                         </li>
+                        <li>
+                            Lama Pengiriman
+                            <span class="float-right mt-2 font-weight-bold">{{ $duration }} hari</span>
+                        </li>
                     </ul>
                 </div>
             </div>
