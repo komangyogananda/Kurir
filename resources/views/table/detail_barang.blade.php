@@ -13,7 +13,6 @@
             <tr>
                 <th scope="col">ID Barang</th>
                 <th scope="col">ID Kategori Barang</th>
-                <th scope="col">ID Transaksi</th>
                 <th scope="col">Deskripsi Barang</th>
                 <th scope="col">Berat</th>
                 <th scope="col">Tinggi</th>
@@ -26,7 +25,6 @@
             <tr>
                 <td>{{ $value->id }}</td>
                 <td>{{ $value->kategori_barang_id }}</td>
-                <td>{{ $value->transaksi_id }}</td>
                 <td>{{ $value->deskripsi_barang }}</td>
                 <td>{{ $value->berat }}</td>
                 <td>{{ $value->tinggi }}</td>

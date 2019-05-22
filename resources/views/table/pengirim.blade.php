@@ -13,7 +13,6 @@
             <tr>
                 <th scope="col">ID Pengirim</th>
                 <th scope="col">ID Kelurahan</th>
-                <th scope="col">ID Transaksi</th>
                 <th scope="col">Nama Pengirim</th>
                 <th scope="col">Alamat Pengirim</th>
                 <th scope="col">No. HP</th>
@@ -24,7 +23,6 @@
             <tr>
                 <td>{{ $value->id }}</td>
                 <td>{{ $value->kelurahan_id }}</td>
-                <td>{{ $value->transaksi_id }}</td>
                 <td>{{ $value->nama_pengirim }}</td>
                 <td>{{ $value->alamat_pengirim }}</td>
                 <td>{{ $value->no_hp_pengirim }}</td>
