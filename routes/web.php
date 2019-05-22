@@ -19,4 +19,19 @@ Route::get('/home', function(){
     return view('home');
 });
 
-Route::get('/table/cabang', 'show_table@cabang');
+Route::get('/table', 'show_table@index')->name('table_index');
+Route::get('/table/cabang', 'show_table@cabang')->name('table_cabang');
+Route::get('/table/detail_barang', 'show_table@detail_barang')->name('table_detail_barang');
+Route::get('/table/jenis_pegawai', 'show_table@jenis_pegawai')->name('table_jenis_pegawai');
+Route::get('/table/kategori_barang', 'show_table@kategori_barang')->name('table_kategori_barang');
+Route::get('/table/kecamatan', 'show_table@kecamatan')->name('table_kecamatan');
+Route::get('/table/kelurahan', 'show_table@kelurahan')->name('table_kelurahan');
+Route::get('/table/kota', 'show_table@kota')->name('table_kota');
+Route::get('/table/kurir', 'show_table@kurir')->name('table_kurir');
+Route::get('/table/pegawai', 'show_table@pegawai')->name('table_pegawai');
+Route::get('/table/penerima', 'show_table@penerima')->name('table_penerima');
+Route::get('/table/pengirim', 'show_table@pengirim')->name('table_pengirim');
+Route::get('/table/provinsi', 'show_table@provinsi')->name('table_provinsi');
+Route::get('/table/tipe_jasa', 'show_table@tipe_jasa')->name('table_tipe_jasa');
+Route::get('/table/tracking', 'show_table@tracking')->name('table_tracking');
+Route::get('/table/transaksi', 'show_table@transaksi')->name('table_transaksi');

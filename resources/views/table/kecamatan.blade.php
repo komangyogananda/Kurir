@@ -11,19 +11,17 @@
     <table class="table table-striped table-bordered table-paginate">
         <thead>
             <tr>
-                <th scope="col">ID Cabang</th>
-                <th scope="col">ID Kelurahan</th>
-                <th scope="col">Nama Cabang</th>
-                <th scope="col">Alamat Cabang</th>
+                <th scope="col">ID Kecamatan</th>
+                <th scope="col">ID Kota</th>
+                <th scope="col">Nama Kecamatan</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($data as $value)
             <tr>
                 <td>{{ $value->id }}</td>
-                <td>{{ $value->kelurahan_id }}</td>
-                <td>{{ $value->nama_cabang }}</td>
-                <td>{{ $value->alamat_cabang }}</td>
+                <td>{{ $value->kota_id }}</td>
+                <td>{{ $value->nama_kecamatan }}</td>
             </tr>
             @endforeach
         </tbody>
