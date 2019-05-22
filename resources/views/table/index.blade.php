@@ -3,7 +3,7 @@
 @section('content')
     <b>Table yang ingin anda lihat.</b><br>
 
-    <a href="{{route ('table_cabang')}}" class="card">Cabang</a><br>
+    <a href="{{route ('table_cabang')}}">Cabang</a><br>
     <a href="{{route ('table_detail_barang')}}">Detail Barang</a><br>
     <a href="{{route ('table_jenis_pegawai')}}">Jenis Pegawai</a><br>
     <a href="{{route ('table_kategori_barang')}}">Kategori Barang</a><br>

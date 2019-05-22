@@ -17,6 +17,7 @@
                 <th scope="col">ID Pegawai</th>
                 <th scope="col">ID Tipe Jasa</th>
                 <th scope="col">Harga</th>
+                <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -28,6 +29,10 @@
                 <td>{{ $value->pegawai_id }}</td>
                 <td>{{ $value->tipe_jasa_id }}</td>
                 <td>{{ $value->harga }}</td>
+                <td>
+                    <a href=""><i class="fas fa-edit"></i></a>
+                    <a href=""><i class="fas fa-trash-alt"></i></a>
+                </td>
             </tr>
             @endforeach
         </tbody>
