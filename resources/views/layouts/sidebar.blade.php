@@ -1,7 +1,7 @@
 <aside class="main-sidebar fixed offcanvas shadow" data-toggle='offcanvas'>
     <section class="sidebar">
         <div class="w-80px mt-3 mb-3 ml-3">
-            <img src="{!! asset('template/img/basic/logo.png') !!}" alt="">
+            <h1>Kurir</h1>
         </div>
         <div class="relative">
             <a data-toggle="collapse" href="#userSettingsCollapse" role="button" aria-expanded="false"

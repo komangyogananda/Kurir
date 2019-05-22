@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <!-- <link rel="icon" href="{!! asset('template/img/basic/favicon.ico') !!}" type="image/x-icon"> -->
-    <title>Kurir JNE</title>
+    <link rel="icon" href="{!! asset('template/img/basic/favicon.ico') !!}" type="image/x-icon">
+    <title>Paper</title>
     <!-- CSS -->
     <link rel="stylesheet" href="{!! asset('template/css/app.css') !!}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
@@ -38,41 +38,24 @@
 <body class="light">
 @include('layouts.preloader')
 <div id="app">
-@include('layouts.sidebar')
-<div class="has-sidebar-left">
-    <div class="pos-f-t">
-    <div class="collapse" id="navbarToggleExternalContent">
-        <div class="bg-dark pt-2 pb-2 pl-4 pr-2">
-            <div class="search-bar">
-                <input class="transparent s-24 text-white b-0 font-weight-lighter w-128 height-50" type="text"
-                       placeholder="start typing...">
+<div class="page parallel">
+    <div class="d-flex row">
+        <div class="col-md-3 white">
+            <div class="p-5 mt-5">
+                <h1>Kurir</h1>
             </div>
-            <a href="#" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-expanded="false"
-               aria-label="Toggle navigation" class="paper-nav-toggle paper-nav-white active "><i></i></a>
+            <div class="p-5">
+                <h3>Tracking</h3>
+                <p>Masukkan ID Transaksimu</p>
+                <form action="index.html">
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-lg" placeholder="ID Transaksi">
+                    </div>
+                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Track">
+                </form>
+            </div>
         </div>
-    </div>
-</div>
-    <div class="sticky">
-        <div class="navbar navbar-expand navbar-dark d-flex justify-content-between bd-navbar blue accent-3">
-            <div class="relative">
-                <a href="#" data-toggle="push-menu" class="paper-nav-toggle pp-nav-toggle">
-                    <i></i>
-                </a>
-            </div>
-            <!--Top Menu Start -->
-    
-        </div>
-    </div>
-</div>
-<div class="page has-sidebar-left height-full">
-    @include('layouts.header')
-    <div class="container-fluid relative animatedParent animateOnce">
-        <div class="tab-content pb-3" id="v-pills-tabContent">
-            <!--Today Tab Start-->
-            <div class="tab-pane animated fadeInUpShort show active" id="v-pills-1">
-                @yield('content')
-            </div>
-            <!--Today Tab End-->
+        <div class="col-md-9  height-full blue accent-3 align-self-center text-center" data-bg-repeat="false" data-bg-possition="center" style="background: url('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/Vfv9BDZagiltwcyiq/warehouse-interior-boxes-logistics-industry-factory-cargo-goods-storage-package_hwl4bubu__F0000.png') #FFEFE4">
         </div>
     </div>
 </div>

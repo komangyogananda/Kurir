@@ -44,3 +44,11 @@ Route::get('/table/tracking/hapus/{id}', 'delete@tracking');
 Route::get('/transaksi/baru', function(){
     return view('/form/transaksi');
 });
+
+Route::get('/tracking', function(){
+    return view('/form/tracking');
+});
+
+Route::get('/tracking/{id}', function(){
+    return view('/form/hasilTracking');
+});
