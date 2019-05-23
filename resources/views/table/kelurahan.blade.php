@@ -1,7 +1,11 @@
 @extends('layouts.master')
 
 @section('content')
-    <style type="text/css">
+    <div class="container">
+        <div class="col-10 m-3">
+            <div class="card">
+                <div class="card-body">
+                <style type="text/css">
         .pagination li{
             float: left;
             list-style-type: none;
@@ -32,4 +36,9 @@
  
  
 	{{ $data->links() }}
+                </div>
+            </div>
+        </div>
+    </div>
+    
 @endsection

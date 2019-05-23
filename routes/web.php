@@ -12,11 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('table.index');
 });
 
 Route::get('/home', function(){
-    return view('home');
+    return view('table.index');
 });
 
 Route::get('/table', 'show_table@index')->name('table_index');
