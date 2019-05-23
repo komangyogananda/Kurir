@@ -51,3 +51,6 @@ Route::post('/tracking', 'tracking@redirectTracking')->name('redirect_tracking')
 Route::get('/kota/get/{provinsi}', 'dependency@getKota');
 Route::get('/kecamatan/get/{kota}', 'dependency@getKecamatan');
 Route::get('/kelurahan/get/{kecamatan}', 'dependency@getKelurahan');
+
+Route::post('/transaksi/baru', 'create@storeTransaksi');
+Route::get('/transaksi/edit/{id}', 'create@edit')->name('transaksi_edit');

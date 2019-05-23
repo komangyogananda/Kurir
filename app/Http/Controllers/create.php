@@ -94,12 +94,9 @@ class create extends Controller
 
     public function edit($id)
     {
-        $items = Item::find($id);
-
-        // Check for correct user
-        if (auth()->user()->id !== $items->user->id) {
-            return redirect('/items')->with('error', 'Unauthorized Page');
-        }
-        return view('items.edit')->with('items', $items);
+        $items = Transaksi::find($id);
+        $tj = DB::table('tipe_jasa')->get();
+        $kb = DB::table('kategori_barang')->get();
+        return view('form.edit_transaksi')->with('items', $items)->with('tipe_jasa', $tj)->with('kategori_barang', $kb);
     }
 }

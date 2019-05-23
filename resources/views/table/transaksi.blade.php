@@ -34,7 +34,7 @@
                 <td>{{ $value->tipe_jasa_id }}</td>
                 <td>{{ $value->harga }}</td>
                 <td>
-                    <a href=""><i class="fas fa-edit"></i></a>
+                    <a href="/transaksi/edit/{{ $value->id }}"><i class="fas fa-edit"></i></a>
                     <a href="/table/transaksi/hapus/{{ $value->id }}"><i class="fas fa-trash-alt"></i></a>
                 </td>
             </tr>
