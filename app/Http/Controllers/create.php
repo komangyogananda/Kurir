@@ -8,6 +8,12 @@ use App\Models\Transaksi;
 use App\Models\Pengirim;
 use App\Models\Penerima;
 use App\Models\DetailBarang;
+use App\Models\Kelurahan;
+use App\Models\Kecamatan;
+use App\Models\Kota;
+use App\Models\Provinsi;
+use App\Models\KategoriBarang;
+use App\Models\Cabang;
 
 class create extends Controller
 {
@@ -92,11 +98,45 @@ class create extends Controller
         return redirect('/table/transaksi')->with('success', 'Transaksi Created');
     }
 
-    public function edit($id)
+    public function editGet($id)
     {
         $items = Transaksi::find($id);
         $tj = DB::table('tipe_jasa')->get();
         $kb = DB::table('kategori_barang')->get();
-        return view('form.edit_transaksi')->with('items', $items)->with('tipe_jasa', $tj)->with('kategori_barang', $kb);
+        $prov = DB::table('provinsi')->get();
+        $pengirim = Pengirim::find($items->pengirim_id);
+        $pengirim->kelurahan = Kelurahan::find($pengirim->kelurahan_id);
+        $pengirim->kecamatan = Kecamatan::find($pengirim->kelurahan->kecamatan_id);
+        $pengirim->kota = Kota::find($pengirim->kecamatan->kota_id);
+        $pengirim->provinsi = Provinsi::find($pengirim->kota->provinsi_id);
+
+        $penerima = penerima::find($items->penerima_id);
+        $penerima->kelurahan = Kelurahan::find($penerima->kelurahan_id);
+        $penerima->kecamatan = Kecamatan::find($penerima->kelurahan->kecamatan_id);
+        $penerima->kota = Kota::find($penerima->kecamatan->kota_id);
+        $penerima->provinsi = Provinsi::find($penerima->kota->provinsi_id);
+
+        $detail_barang = DetailBarang::find($items->detail_barang_id);
+        $detail_barang->kategori = KategoriBarang::find($detail_barang->kategori_barang_id);
+
+        $cabang = Cabang::find($items->cabang_id);
+        $cabang->kelurahan = Kelurahan::find($cabang->kelurahan_id);
+        $cabang->kecamatan = Kecamatan::find($cabang->kelurahan->kecamatan_id);
+        $cabang->kota = Kota::find($cabang->kecamatan->kota_id);
+        $cabang->provinsi = Provinsi::find($cabang->kota->provinsi_id);
+        // print_r($pengirim);
+        // exit();
+        return view('form.edit_transaksi')->with('items', $items)->with('tipe_jasa', $tj)->with('kategori_barang', $kb)->with('provinsi', $prov)->with('pengirim', $pengirim)->with('penerima', $penerima)->with('detail_barang', $detail_barang)->with('cabang', $cabang);
+    }
+
+    public function editPost($id)
+    {
+        $data = request()->all();
+        $row = Transaksi::find($id);
+        // print_r($data['cabang']);
+        $row->cabang_id = $data['cabang'];
+        $row->status = $data['status'];
+        $row->save();
+        return create::editGet($id);
     }
 }

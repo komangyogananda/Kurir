@@ -25,4 +25,10 @@ class dependency extends Controller
         $kelurahan = DB::table('kelurahan')->where('kecamatan_id', $kecamatan)->pluck('id', 'nama_kelurahan');
         return json_encode($kelurahan);
     }
+
+    public function getCabang($kelurahan)
+    {
+        $cabang = DB::table('cabang')->where('kelurahan_id', $kelurahan)->pluck('id', 'nama_cabang');
+        return json_encode($cabang);
+    }
 }
