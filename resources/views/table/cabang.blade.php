@@ -19,6 +19,7 @@
                             <th scope="col">ID Kelurahan</th>
                             <th scope="col">Nama Cabang</th>
                             <th scope="col">Alamat Cabang</th>
+                            <th scope="col">Penghasilan Cabang</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -28,6 +29,7 @@
                             <td>{{ $value->kelurahan_id }}</td>
                             <td>{{ $value->nama_cabang }}</td>
                             <td>{{ $value->alamat_cabang }}</td>
+                            <td>{{ $penghasilan[$value->id] }}</td>
                         </tr>
                         @endforeach
                     </tbody>

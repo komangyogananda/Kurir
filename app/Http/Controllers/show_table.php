@@ -16,7 +16,13 @@ class show_table extends Controller
     public function cabang()
     {
         $data['data'] = DB::table('cabang')->paginate(50);
-        return view('table.cabang', $data);
+        foreach ($data['data'] as $cabang) {
+            // print_r($cabang);
+            $penghasilan[$cabang->id] = DB::select('select PenghasilanCabang(?) uang', array($cabang->id))[0]->uang;
+        }
+        // print_r($data['penghasilan']);
+        // exit();
+        return view('table.cabang', $data)->with('penghasilan', $penghasilan);
     }
     
     public function detail_barang()
