@@ -53,12 +53,12 @@ class create extends Controller
             'lebar_barang' => 'nullable',
             'tinggi_barang' => 'nullable',
         ]);
-        $harga = $request->input('berat_barang') * $request->input('tinggi_barang') * $request->input('lebar_barang') * $request->input('panjang_barang') * $request->input('tipe_jasa');
+        //$harga = $request->input('berat_barang') * $request->input('tinggi_barang') * $request->input('lebar_barang') * $request->input('panjang_barang') * $request->input('tipe_jasa');
         $query = "CALL `insert_transaksi`('".$request->input('kelurahan_pengirim')."','"
             .$request->input('nama_pengirim')."','".$request->input('alamat_pengirim')."','".$request->input('no_hp_pengirim')."','"
             .$request->input('kelurahan_penerima')."','".$request->input('nama_penerima')."','".$request->input('alamat_penerima')."','".$request->input('no_hp_penerima')."','"
             .$request->input('kategori_barang')."','".$request->input('deskripsi_barang')."','".$request->input('berat_barang')."','".$request->input('tinggi_barang')."','".$request->input('lebar_barang')."','".$request->input('panjang_barang')."','"
-            .$request->input('id_cabang')."','".$request->input('id_kurir')."','".$request->input('id_pegawai')."','".$request->input('tipe_jasa')."','1',".$harga.");";
+            .$request->input('id_cabang')."','".$request->input('id_kurir')."','".$request->input('id_pegawai')."','".$request->input('tipe_jasa')."');";
         DB::statement($query);
 
         /*
