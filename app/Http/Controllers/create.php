@@ -58,7 +58,7 @@ class create extends Controller
             .$request->input('nama_pengirim')."','".$request->input('alamat_pengirim')."','".$request->input('no_hp_pengirim')."','"
             .$request->input('kelurahan_penerima')."','".$request->input('nama_penerima')."','".$request->input('alamat_penerima')."','".$request->input('no_hp_penerima')."','"
             .$request->input('kategori_barang')."','".$request->input('deskripsi_barang')."','".$request->input('berat_barang')."','".$request->input('tinggi_barang')."','".$request->input('lebar_barang')."','".$request->input('panjang_barang')."','"
-            .$request->input('id_cabang')."','".$request->input('id_kurir')."','".$request->input('id_pegawai')."',".$request->input('tipe_jasa').",1,".$harga;
+            .$request->input('id_cabang')."','".$request->input('id_kurir')."','".$request->input('id_pegawai')."','".$request->input('tipe_jasa')."','1',".$harga.");";
         DB::statement($query);
 
         /*
