@@ -56,3 +56,6 @@ Route::get('/cabang/get/{kelurahan}', 'dependency@getCabang');
 Route::post('/transaksi/baru', 'create@storeTransaksi');
 Route::get('/transaksi/edit/{id}', 'create@editGet')->name('transaksi_edit');
 Route::post('/transaksi/edit/{id}', 'create@editPost')->name('transaksi_edit_store');
+
+Route::get('/terfavorit', 'Daerah@index');
+Route::post('/terfavorit', 'Daerah@terfavorit');

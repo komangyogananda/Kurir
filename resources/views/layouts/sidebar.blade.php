@@ -57,6 +57,9 @@
                         <a href="/tracking" class="list-group-item list-group-item-action ">
                             Tracking Pesanan
                         </a>
+                        <a href="/terfavorit" class="list-group-item list-group-item-action ">
+                            Daerah Favorit
+                        </a>
                     </div>
             </div>
         </div>

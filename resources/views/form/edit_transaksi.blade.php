@@ -104,7 +104,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-12">
+        <div class="col-6">
             <div class="card m-3">
                 <div class="card-body">
                     <div class="row">
@@ -139,6 +139,58 @@
                                         <span class="float-right mt-2 font-weight-bold">{{ $detail_barang->kategori_barang->nama_kategori }}</span>
                                     </li>
                                 </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card m-3">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="text-center">
+                                <h3>Edit Detail barang</h3>
+                            </div>
+                            <div>
+                                <form action="" method="post">
+                                {{ csrf_field() }}
+                                    <input type="hidden" name="tipe" value="1">
+                                    <div class="form-group col-6 focused">
+                                        <label for="deskripsi" class="col-form-label">Deskripsi</label>
+                                        <input type="text" class="form-control" id="deskripsi" name="deskripsi" value="{{ $detail_barang->deskripsi_barang }}">
+                                    </div>
+                                    <div class="form-group col-6 focused">
+                                        <label for="berat" class="col-form-label">Berat</label>
+                                        <input type="number" class="form-control" id="berat" name="berat" value="{{ $detail_barang->berat }}">
+                                    </div>
+                                    <div class="form-group col-6 focused">
+                                        <label for="panjang" class="col-form-label">Panjang</label>
+                                        <input type="number" class="form-control" id="panjang" name="panjang" value="{{ $detail_barang->panjang }}">
+                                    </div>
+                                    <div class="form-group col-6 focused">
+                                        <label for="lebar" class="col-form-label">Lebar</label>
+                                        <input type="number" class="form-control" id="lebar" name="lebar" value="{{ $detail_barang->lebar }}">
+                                    </div>
+                                    <div class="form-group col-6 focused">
+                                        <label for="tinggi" class="col-form-label">Tinggi</label>
+                                        <input type="number" class="form-control" id="tinggi" name="tinggi" value="{{ $detail_barang->tinggi }}">
+                                    </div>
+                                    <div class="form-group col-6 focused">
+                                        <label for="kategoriBarang" class="col-form-label">Kategori Barang</label>
+                                        <select id="kategoriBarang" name="kategoriBarang" class="form-control">
+                                            <option value="1">Elektronik</option>
+                                            <option value="2">Dokumen dan Surat</option>
+                                            <option value="3">Makanan dan Minuman</option>
+                                            <option value="4">Logam Mulia</option>
+                                            <option value="5">Pecah Belah</option>
+                                            <option value="6">Barang Rumah Tangga</option>
+                                            <option value="7">Barang Besar</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Perbaharui</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -207,6 +259,7 @@
                             <div>
                                 <form action="" method="post">
                                 {{ csrf_field() }}
+                                    <input type="hidden" name="tipe" value="2">
                                     <div class="form-group col-10 focused">
                                         <label for="provinsi" class="col-form-label">Provinsi</label>
                                         <select id="provinsi" name="provinsi" class="form-control">

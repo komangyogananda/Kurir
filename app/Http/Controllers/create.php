@@ -53,12 +53,12 @@ class create extends Controller
             'lebar_barang' => 'nullable',
             'tinggi_barang' => 'nullable',
         ]);
-        //$harga = $request->input('berat_barang') * $request->input('tinggi_barang') * $request->input('lebar_barang') * $request->input('panjang_barang') * $request->input('tipe_jasa');
+        $harga = $request->input('berat_barang') * $request->input('tinggi_barang') * $request->input('lebar_barang') * $request->input('panjang_barang') * $request->input('tipe_jasa');
         $query = "CALL `insert_transaksi`('".$request->input('kelurahan_pengirim')."','"
             .$request->input('nama_pengirim')."','".$request->input('alamat_pengirim')."','".$request->input('no_hp_pengirim')."','"
             .$request->input('kelurahan_penerima')."','".$request->input('nama_penerima')."','".$request->input('alamat_penerima')."','".$request->input('no_hp_penerima')."','"
             .$request->input('kategori_barang')."','".$request->input('deskripsi_barang')."','".$request->input('berat_barang')."','".$request->input('tinggi_barang')."','".$request->input('lebar_barang')."','".$request->input('panjang_barang')."','"
-            .$request->input('id_cabang')."','".$request->input('id_kurir')."','".$request->input('id_pegawai')."','".$request->input('tipe_jasa')."');";
+            .$request->input('id_cabang')."','".$request->input('id_kurir')."','".$request->input('id_pegawai')."',".$request->input('tipe_jasa').",1,".$harga;
         DB::statement($query);
 
         /*
@@ -130,14 +130,44 @@ class create extends Controller
         return view('form.edit_transaksi')->with('items', $items)->with('tipe_jasa', $tj)->with('kategori_barang', $kb)->with('provinsi', $prov)->with('pengirim', $pengirim)->with('penerima', $penerima)->with('detail_barang', $detail_barang)->with('cabang', $cabang);
     }
 
-    public function editPost($id)
+    public function editPost($id, Request $request)
     {
         $data = request()->all();
-        $row = Transaksi::find($id);
+        if ($data['tipe'] == '2'){
+
+            $this->validate($request, [
+                "cabang" => "required",
+                "status" => "required",
+            ]);
+
+            $row = Transaksi::find($id);
+            // print_r($data['cabang']);
+            $row->cabang_id = $data['cabang'];
+            $row->status = $data['status'];
+            $row->save();
+        }else if ($data['tipe'] == '1'){
+
+            $this->validate($request, [
+                "kategoriBarang" => "required",
+                "deskripsi" => "required",
+                "berat" => "required",
+                "panjang" => "required",
+                "lebar" => "required",
+                "tinggi" => "required",
+            ]);
+
+            $transaksi = Transaksi::find($id);
+            $detail_barang = DetailBarang::find($transaksi->detail_barang_id);
         // print_r($data['cabang']);
-        $row->cabang_id = $data['cabang'];
-        $row->status = $data['status'];
-        $row->save();
+            $detail_barang->kategori_barang_id = $data['kategoriBarang'];
+            $detail_barang->deskripsi_barang = $data['deskripsi'];
+            $detail_barang->berat = $data['berat'];
+            $detail_barang->panjang = $data['panjang'];
+            $detail_barang->lebar = $data['lebar'];
+            $detail_barang->tinggi = $data['tinggi'];
+
+            $detail_barang->save();
+        }
         return create::editGet($id);
     }
 }
