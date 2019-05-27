@@ -22,6 +22,7 @@
                 <th scope="col">No. HP</th>
                 <th scope="col">Username</th>
                 <th scope="col">Password</th>
+                <th scope="col">Status</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
@@ -35,6 +36,7 @@
                 <td>{{ $value->no_hp_pegawai }}</td>
                 <td>{{ $value->username }}</td>
                 <td>{{ $value->password }}</td>
+                <td>{{ $value->status }}</td>
                 <td>
                     <a href=""><i class="fas fa-edit"></i></a>
                     <a href="/table/pegawai/hapus/{{ $value->id }}"><i class="fas fa-trash-alt"></i></a>

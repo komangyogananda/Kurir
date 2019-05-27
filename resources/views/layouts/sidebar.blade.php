@@ -28,6 +28,9 @@
                         <a href="/table/kota" class="list-group-item list-group-item-action ">
                             Kota
                         </a>
+                        <a href="/table/kurir" class="list-group-item list-group-item-action ">
+                            Kurir
+                        </a>
                         <a href="/table/pegawai" class="list-group-item list-group-item-action ">
                             Pegawai
                         </a>

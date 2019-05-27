@@ -10,13 +10,13 @@ class delete extends Controller
 {
     public function kurir($id)
     {
-        DB::table('kurir')->where('id', $id)->delete();
+        DB::table('kurir')->where('id', $id)->update(['status' => 0]);
         return redirect('/table/kurir');
     }
 
     public function pegawai($id)
     {
-        DB::table('pegawai')->where('id', $id)->delete();
+        DB::table('pegawai')->where('id', $id)->update(['status' => 0]);
         return redirect('/table/pegawai');
     }
     
