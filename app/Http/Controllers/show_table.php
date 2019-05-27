@@ -106,6 +106,7 @@ class show_table extends Controller
     public function transaksi()
     {
         $data['data'] = DB::table('transaksi')->paginate(50);
+        $data['uncleared'] = DB::select('SELECT UnclearedTransaction() as unclear');
         return view('table.transaksi', $data);
     }
 

@@ -41,6 +41,10 @@
             @endforeach
         </tbody>
     </table>
+    Transaksi belum selesai :
+    @foreach ($uncleared as $value)
+        {{$value->unclear}} <br/>
+    @endforeach
     Halaman : {{ $data->currentPage() }} <br/>
 	Jumlah Data : {{ $data->total() }} <br/>
 	Data Per Halaman : {{ $data->perPage() }} <br/>

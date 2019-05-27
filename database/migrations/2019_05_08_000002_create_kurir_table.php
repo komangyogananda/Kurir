@@ -19,6 +19,7 @@ class CreateKurirTable extends Migration
             $table->string('no_hp_kurir', 20);
             $table->string('username', 50);
             $table->string('password', 200);
+            $table->tinyInteger('status')->default('1');
             $table->rememberToken();
             $table->timestamps();
         });

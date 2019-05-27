@@ -59,3 +59,9 @@ Route::post('/transaksi/edit/{id}', 'create@editPost')->name('transaksi_edit_sto
 
 Route::get('/terfavorit', 'Daerah@index');
 Route::post('/terfavorit', 'Daerah@terfavorit');
+
+Route::get('/transaksi/terbanyak', 'transaksi_terbanyak@index');
+Route::get('/transaksi/barang_terbanyak', 'jenis_barang_terbanyak@index');
+
+Route::get('/transaksi/tipe_jasa', 'jenis_transaksi_terbanyak@index');
+Route::post('/transaksi/tipe_jasa', 'jenis_transaksi_terbanyak@terfavorit');

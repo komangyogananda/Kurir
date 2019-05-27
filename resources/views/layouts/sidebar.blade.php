@@ -49,6 +49,12 @@
                         <a href="/table/transaksi" class="list-group-item list-group-item-action ">
                             Transaksi
                         </a>
+                        <a href="/transaksi/terbanyak" class="list-group-item list-group-item-action ">
+                            10 Daerah Transaksi Terbanyak
+                        </a>
+                        <a href="/transaksi/barang_terbanyak" class="list-group-item list-group-item-action ">
+                            3 Jenis Barang Terbanyak
+                        </a>
                     </div>
                     <div class="list-group mt-3 shadow">
                     <a href="/transaksi/baru" class="list-group-item list-group-item-action ">
@@ -59,6 +65,9 @@
                         </a>
                         <a href="/terfavorit" class="list-group-item list-group-item-action ">
                             Daerah Favorit
+                        </a>
+                        <a href="/transaksi/tipe_jasa" class="list-group-item list-group-item-action ">
+                            Total Transaksi Tipe Jasa
                         </a>
                     </div>
             </div>

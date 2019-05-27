@@ -19,6 +19,7 @@ class CreatePegawaiTable extends Migration
             $table->bigInteger('cabang_id')->unsigned();
             $table->string('nama_pegawai', 125);
             $table->string('no_hp_pegawai', 20);
+            $table->tinyInteger('status')->default('1');
             $table->string('username', 50);
             $table->string('password', 200);
             $table->rememberToken();
